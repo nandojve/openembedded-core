@@ -8,6 +8,7 @@ SRC_URI = "http://downloads.yoctoproject.org/releases/pseudo/${BPN}-${PV}.tar.bz
            file://efe0be279901006f939cd357ccee47b651c786da.patch \
            file://b6b68db896f9963558334aff7fca61adde4ec10f.patch \
            file://toomanyfiles.patch \
+           file://fcntl-fix.patch \
            file://0001-Use-epoll-API-on-Linux.patch \
            "
 
