@@ -10,7 +10,7 @@ do_configure[cleandirs] = "${B}"
 MESON_SOURCEPATH = "${S}"
 
 def noprefix(var, d):
-    return d.getVar(var).replace(d.getVar('prefix') + '/', '', 1)
+    return d.getVar(var, True).replace(d.getVar('prefix', True) + '/', '', 1)
 
 MESONOPTS = " --prefix ${prefix} \
               --buildtype plain \
@@ -42,7 +42,7 @@ MESON_CROSS_FILE_class-target = "--cross-file ${WORKDIR}/meson.cross"
 MESON_CROSS_FILE_class-nativesdk = "--cross-file ${WORKDIR}/meson.cross"
 
 def meson_array(var, d):
-    return "', '".join(d.getVar(var).split()).join(("'", "'"))
+    return "', '".join(d.getVar(var, True).split()).join(("'", "'"))
 
 addtask write_config before do_configure
 do_write_config[vardeps] += "MESON_C_ARGS MESON_CPP_ARGS MESON_LINK_ARGS CC CXX LD AR NM STRIP READELF"
