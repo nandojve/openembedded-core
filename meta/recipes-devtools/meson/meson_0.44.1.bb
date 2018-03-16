@@ -18,4 +18,4 @@ inherit setuptools3
 
 RDEPENDS_${PN} = "ninja python3-core python3-modules"
 
-BBCLASSEXTEND = "native"
+BBCLASSEXTEND = "native nativesdk"
